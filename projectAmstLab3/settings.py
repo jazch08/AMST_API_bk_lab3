@@ -176,11 +176,6 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-if not DEBUG:
-    # create superuser on deploy
-    from django.contrib.auth import get_user_model
-    User = get_user_model()
-    User.objects.create_superuser('admin', 'admin@myproject.com', 'my secure password')
 
 
 # Default primary key field type
